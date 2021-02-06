@@ -1,3 +1,4 @@
 instabot==0.117.0
 instaloader==4.6.1
 fpdf==1.7.2
+schedule
