@@ -1,0 +1,5 @@
+requests==2.20.0
+requests_toolbelt==0.8.0
+instabot==0.117.0
+instaloader==4.6.1
+fpdf==1.7.2
