@@ -7,6 +7,7 @@ import pickle
 import glob
 import time
 from multiprocessing import Process
+import schedule
 
 def one_pass(USERNAME, PASSWORD, USER_EMAIL, HASHTAGS):
 
@@ -14,20 +15,20 @@ def one_pass(USERNAME, PASSWORD, USER_EMAIL, HASHTAGS):
 	user = USER_EMAIL
 	path_main = os.getcwd()
 
-	# if os.path.exists('./Posts'):
-	# 	try:
-	# 		os.remove('./Posts')
-	# 	except:
-	# 		shutil.rmtree('./Posts')
-	# 	os.mkdir('./Posts')
-	# else:
-	# 	os.mkdir('./Posts')
+	if os.path.exists('./Posts'):
+		try:
+			os.remove('./Posts')
+	 	except:
+			shutil.rmtree('./Posts')
+		os.mkdir('./Posts')
+	else:
+		os.mkdir('./Posts')
 
 	# ---------- GET POSTS FROM IG ----------------- #
 
-	# for hashtag in HASHTAGS:
-	# 	os.chdir(path_main)
-	# 	down(hashtag)
+	for hashtag in HASHTAGS:
+		os.chdir(path_main)
+	 	down(hashtag)
 
 	os.chdir(path_main)
 	if not os.path.exists('./pdf_files'):
@@ -148,5 +149,6 @@ def execute():
 				p2.join()
 		except:
 			one_pass(USERNAME, PASSWORD, USER_EMAIL, HASHTAGS)
-# exit()
-execute()
+
+schedule.every(10).minutes.do(execute)
+#schedule.every().day.at("6:00").do(execute)
