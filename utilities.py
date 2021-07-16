@@ -12,7 +12,7 @@ from mail import send
 # ---------------- DATA FOR THE FOLLOW-FOR-FOLLOW FUNCTIONS ------------------ #
 HASHTAGS = ['elonmusk']
 path_main = os.getcwd()
-username = 'cocoa_3103'
+username = '''Enter your username here'''
 password = '''Enter your password here'''
 
 def follow(user_list, USERNAME, PASSWORD):
