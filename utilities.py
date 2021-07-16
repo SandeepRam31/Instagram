@@ -13,7 +13,7 @@ from mail import send
 HASHTAGS = ['elonmusk']
 path_main = os.getcwd()
 username = 'cocoa_3103'
-password = 'voldemort'
+password = '''Enter your password here'''
 
 def follow(user_list, USERNAME, PASSWORD):
 
